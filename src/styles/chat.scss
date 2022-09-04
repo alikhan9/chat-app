@@ -1,0 +1,370 @@
+:root {
+  overflow: hidden;
+  --ration: 1;
+}
+
+.container-msg {
+  width: 100vw;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.inbox_people {
+  float: left;
+  overflow: hidden;
+  width: 30%;
+  background: #f8f8f8 none repeat scroll 0 0;
+  border-right: 1px solid #c4c4c4;
+}
+
+.inbox_msg {
+  border: 1px solid #c4c4c4;
+  clear: both;
+  overflow: hidden;
+}
+
+.top_spac {
+  margin: calc(20px*var(--ration)) 0 0;
+}
+
+
+.headind_srch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(10px*var(--ration)) calc(29px*var(--ration)) calc(10px*var(--ration)) calc(20px*var(--ration));
+  overflow: hidden;
+  border-bottom: 1px solid #c4c4c4;
+
+  :first-child {
+    flex: 4;
+  }
+
+  input {
+    outline: 1px solid hsl(0, 0%, 40%);
+    border-radius: .5em;
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    border-width: 0 0 1px 0;
+    padding: calc(2px*var(--ration)) 0 calc(4px*var(--ration)) calc(6px*var(--ration));
+    background: none;
+  }
+
+  :last-child {
+    flex: 5;
+  }
+}
+
+.recent_heading h4 {
+  color: #05728f;
+  font-size: calc(21px*var(--ration));
+  margin: auto;
+}
+
+
+.srch_bar .input-group-addon button {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  padding: 0;
+  color: #707070;
+  font-size: calc(18px*var(--ration));
+}
+
+.srch_bar .input-group-addon {
+  margin: 0 0 0 calc(-27px*var(--ration));
+}
+
+.chat_people {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 60% 30%;
+  gap: 1em;
+
+  h5 {
+    font-size: calc(15px*var(--ration));
+    ;
+    color: #464646;
+    margin: 0 0 8px 0;
+  }
+
+  .img {
+    transform: translateY(-18%);
+  }
+  
+  .imgAdd {
+    margin-left: 1em;
+  }
+
+  p {
+    font-size: calc(14px*var(--ration));
+    ;
+    color: #989898;
+  }
+
+  span {
+    font-size: calc(13px*var(--ration));
+    ;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+
+}
+
+.chat_list {
+  margin: 0;
+  padding: calc(18px*var(--ration)) calc(16px*var(--ration)) calc(10px*var(--ration));
+}
+
+.inbox_chat {
+  height: 90.1vh;
+  overflow-y: auto;
+}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 6%;
+}
+
+
+.received_msg {
+  display: inline-block;
+  padding: 0 0 0 10px;
+  vertical-align: top;
+  width: 92%;
+}
+
+.received_withd_msg p {
+  background: #ebebeb none repeat scroll 0 0;
+  border-radius: calc(3px*var(--ration));
+  color: #646464;
+  font-size: calc(14px*var(--ration));
+  ;
+  margin: 0;
+  padding: calc(5px*var(--ration)) calc(10px*var(--ration)) calc(5px*var(--ration)) calc(12px*var(--ration));
+  width: 100%;
+}
+
+.time_date {
+  color: #747474;
+  display: block;
+  font-size: calc(12px*var(--ration));
+  ;
+  margin: calc(8px*var(--ration)) 0 0;
+}
+
+.received_withd_msg {
+  width: 57%;
+}
+
+.mesgs {
+  float: left;
+  padding: calc(30px*var(--ration)) calc(15px*var(--ration)) 0 calc(25px*var(--ration));
+  width: 40%;
+}
+
+.sent_msg p {
+  background: #05728f none repeat scroll 0 0;
+  border-radius: calc(3px*var(--ration));
+  font-size: calc(14px*var(--ration));
+  ;
+  margin: 0;
+  color: #fff;
+  padding: calc(10px*var(--ration)) calc(10px*var(--ration)) calc(10px*var(--ration)) calc(12px*var(--ration));
+  width: 100%;
+}
+
+.outgoing_msg {
+  overflow: hidden;
+  margin: calc(14px*var(--ration)) 0 calc(14px*var(--ration));
+}
+
+.sent_msg {
+  float: right;
+  width: 46%;
+}
+
+.input_msg_write input {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #4c4c4c;
+  font-size: calc(15px*var(--ration));
+  ;
+  min-height: calc(48px*var(--ration));
+  width: 100%;
+}
+
+.type_msg {
+  border-top: 1px solid #c4c4c4;
+  position: relative;
+}
+
+.msg_send_btn {
+  background: #05728f none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: calc(17px*var(--ration));
+  ;
+  height: 33px;
+  position: absolute;
+  right: 0;
+  top: 11px;
+  width: calc(33px*var(--ration));
+}
+
+.messaging {
+  padding: 0 0 calc(50px*var(--ration)) 0;
+}
+
+.msg_history {
+  height: 87vh;
+  overflow-y: auto;
+}
+
+
+
+
+
+.sender {
+  font-weight: 500;
+  font-size: calc(14px*var(--ration));
+  display: inline-block;
+}
+
+.join_button {
+  background-color: hsl(136, 54%, 52%);
+  border-radius: calc(28px*var(--ration));
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: calc(17px*var(--ration));
+  padding: 8px 38px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  width: calc(160px*var(--ration));
+  height: calc(40px*var(--ration));
+
+  &:hover {
+    background-color: #5cbf2a;
+  }
+
+}
+
+.leave_button {
+  background-color: hsl(0, 44%, 52%);
+  margin-right: 1em;
+
+  &:hover {
+    background-color: hsl(0, 64%, 46%);
+  }
+
+
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  box-shadow: 0 calc(8px*var(--ration)) calc(8px*var(--ration)) calc(-4px*var(--ration)) lightblue;
+  padding: calc(10px*var(--ration));
+  border: #000;
+  margin: calc(5px*var(--ration)) calc(2px*var(--ration));
+  border-radius: .5em;
+
+  &:hover {
+    background: hsl(185, 87%, 40%);
+    color: #fff;
+
+    p,
+    span,
+    h5 {
+      color: wheat;
+    }
+  }
+
+  :first-child {
+    flex: 8;
+    cursor: pointer;
+  }
+}
+
+.contactContainer.active {
+  background: hsl(185, 87%, 30%);
+  color: #fff;
+
+  p,
+  span,
+  h5 {
+    color: wheat;
+  }
+}
+
+.error-popup {
+  background: hsl(0, 0%, 90%);
+  width: calc(200px*var(--ration));
+  height: calc(50px*var(--ration));
+  position: absolute;
+  top: 3.7%;
+  right: 5%;
+  border-radius: .5em;
+  padding-top: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 3s ease-in forwards;
+
+  p {
+    font-size: calc(.8em*var(--ration));
+    ;
+    color: hsl(0, 70%, 60%);
+  }
+
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  :root {
+    --ration: 0.875;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  :root {
+    --ration: 0.875;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  :root {
+    --ration: 1;
+  }
+}
+
+@media only screen and (min-width: 2500px) {
+  :root {
+    --ration: 1.2;
+  }
+}
+
+@media only screen and (min-width: 3000px) {
+  :root {
+    --ration: 1.5;
+  }
+}

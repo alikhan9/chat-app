@@ -1,0 +1,86 @@
+:root {
+    --ratio:1;
+}
+
+.container-menu {
+    font-size: calc(22px*var(--ratio));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #05728f;
+    width: 100vw;
+    height: 5vh;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        margin-right: 1%;
+        list-style-type: none;
+    }
+
+    li {
+        padding: 0;
+        margin: 0;
+        color: hsl(39, 77%, 83%);
+        margin-left: 1.5em;
+        cursor: pointer;
+
+        &:hover {
+            color: hsl(39, 77%, 73%);
+        }
+    }
+
+    div {
+        margin-left: 1%;
+        font-size: calc(25px*var(--ratio));
+        color: hsl(39, 77%, 83%);
+
+    }
+
+    input {
+        outline: 1px solid hsl(0, 0%, 40%);
+        border-radius: .5em;
+        width: calc(200px*var(--ratio));
+        height: calc(30px*var(--ratio));
+        border: 1px solid #cdcdcd;
+        border-width: 0 0 1px 0;
+        padding: calc(2px*var(--ratio)) 0 calc(4px*var(--ratio)) calc(6px*var(--ratio));
+        font-size: .7em;
+        transform: translateY(-10%);
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+    :root {
+      --ration: 0.875;
+    }
+  }
+  
+  @media only screen and (min-width: 1600px) {
+    :root {
+      --ration: 0.875;
+    }
+  }
+  
+  @media only screen and (min-width: 1920px) {
+    :root {
+      --ration: 1;
+    }
+  }
+  
+  @media only screen and (min-width: 2500px) {
+    :root {
+      --ration: 1.2;
+    }
+  }
+  
+  @media only screen and (min-width: 3000px) {
+    :root {
+      --ration: 1.5;
+    }
+  }
+  
