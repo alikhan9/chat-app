@@ -15,53 +15,58 @@ const SignUp = ({ error, setError, setSuccessMessage }) => {
 
   const performCreateUser = (e) => {
     e.preventDefault();
-        if (
-            e.target.username.value === "" ||
-            e.target.firstname.value === "" ||
-            e.target.lastname.value === "" ||
-            e.target.email.value === "" ||
-            e.target.password.value === "" ||
-            e.target.dateofbirth.value === "") {
-            setError("Please fill in all fields");
-            return;
-        }
-        if (!validateEmail(e.target.email.value)) {
-            setError("Please enter a valid email");
-            return;
-        }
+    if (
+      e.target.username.value === "" ||
+      e.target.firstname.value === "" ||
+      e.target.lastname.value === "" ||
+      e.target.email.value === "" ||
+      e.target.password.value === "" ||
+      e.target.dateofbirth.value === "") {
+      setError("Please fill in all fields");
+      return;
+    }
+    if (!validateEmail(e.target.email.value)) {
+      setError("Please enter a valid email");
+      return;
+    }
 
-        createUser(
-            e.target.username.value,
-            e.target.firstname.value,
-            e.target.lastname.value,
-            e.target.password.value,
-            e.target.email.value,
-            e.target.dateofbirth.value)
-            .then((data) => {
-                setError("");
-                setSuccessMessage("Account created successfully, please log in");
-                redirectToLogin();
-            })
-            .catch((err) => {
-            });
+    createUser(
+      e.target.username.value,
+      e.target.firstname.value,
+      e.target.lastname.value,
+      e.target.password.value,
+      e.target.email.value,
+      e.target.dateofbirth.value)
+      .then((data) => {
+        setError("");
+        setSuccessMessage("Account created successfully, please log in");
+        redirectToLogin();
+      })
+      .catch((err) => {
+        setError(err?.response.data.message);
+        console.log(err);
+        if (err?.response?.status >= 500)
+          setError("Server unreachable");
+      });
 
   }
 
   function validateEmail(emailAdress) {
     let regexEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (emailAdress.match(regexEmail)) {
-        return true;
+      return true;
     } else {
-        return false;
+      return false;
     }
-}
+  }
 
   const handleChangeDate = (value) => {
-      setStartDate(value);
+    setStartDate(value);
   }
 
   const styleInput = {
     width: '100%',
+    color: 'error.main'
   };
 
   return (
@@ -77,7 +82,7 @@ const SignUp = ({ error, setError, setSuccessMessage }) => {
           >
             <div className="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
               <h1>
-                <a href="">
+                <a href="#">
                   ChatApp
                 </a>
               </h1>
@@ -92,39 +97,38 @@ const SignUp = ({ error, setError, setSuccessMessage }) => {
                     Sign up
                   </span>
                   <form id="stripe-login" method="POST" autoComplete="off" onSubmit={performCreateUser}>
-                    <div className="field padding-bottom--24">
+                    <div className="field padding-bottom--18">
                       <label htmlFor="username">Username</label>
                       <input type="text" name="username" />
                     </div>
-                    <div className="field padding-bottom--24">
+                    <div className="field padding-bottom--18">
                       <label htmlFor="password">Password</label>
                       <input type="password" name="password" />
                     </div>
-                    <div className="field padding-bottom--24">
+                    <div className="field padding-bottom--18">
                       <label htmlFor="email">Email</label>
                       <input type="email" name="email" />
                     </div>
-                    <div className="field padding-bottom--24">
+                    <div className="field padding-bottom--18">
                       <label htmlFor="firstname">First Name</label>
                       <input type="text" name="firstname" />
                     </div>
-                    <div className="field padding-bottom--24">
+                    <div className="field padding-bottom--18">
                       <label htmlFor="lastname">Last Name</label>
                       <input type="text" name="lastname" />
                     </div>
-                    <div className=" padding-bottom--24">
+                    <div className="field padding-bottom--18">
                       <label htmlFor="dob">Date of birth</label>
                       <LocalizationProvider dateAdapter={AdapterDateFns} >
-                        <DesktopDatePicker
-                          inputFormat="yyyy-MM-dd"
-                          value={startDate}
-                          onChange={handleChangeDate}
-                          renderInput={(params) => <TextField {...params} align="center" sx={styleInput} name="dateofbirth" />}
-                        />
+                          <DesktopDatePicker
+                            inputFormat="yyyy-MM-dd"
+                            value={startDate}
+                            onChange={handleChangeDate}
+                            renderInput={(params) => <TextField {...params} variant="filled" align="center" sx={styleInput} name="dateofbirth" />}
+                          />
                       </LocalizationProvider>
-
                     </div>
-                    <div className="field padding-bottom--24">
+                    <div className="field padding-top--24">
                       <input type="submit" name="submit" value="Create" />
                     </div>
                   </form>

@@ -62,17 +62,8 @@ export const leaveGroup = (group) => {
 
 
 export const createUser = (username, first_name, last_name, password, email, dateofbirth) => {
-  const data = {
-    username: username,
-    first_name: first_name,
-    last_name: last_name,
-    password: password,
-    email: email,
-    dateofbirth: dateofbirth
-
-  };
-
-  return axios.post('https://chatapp.alikhan-zaipoulaiev.fr/api/v1/users/add', data);
+  const data = `{"username":"${username}","first_name":"${first_name}","last_name":"${last_name}","password":"${password}","email":"${email}","dateofbirth":"${dateofbirth}"}`;
+  return axios.post('https://chatapp.alikhan-zaipoulaiev.fr/api/v1/users/add', JSON.parse(data));
 }
 
 
